@@ -1,8 +1,16 @@
-import { createBrowserRouter } from 'react-router-dom'
+import {createBrowserRouter} from 'react-router-dom'
+
+import {RootLayout} from '@/components/layout/RootLayout'
 
 export const router = createBrowserRouter([
     {
         path: '/',
-        element: <div className="p-8 text-2xl font-bold">Movie Browser 🎬</div>,
+        element: <RootLayout/>,
+        children: [
+            {
+                index: true,
+                element: <div className="text-zinc-400">Welcome to Movie Browser</div>,
+            },
+        ],
     },
 ])
